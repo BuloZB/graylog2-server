@@ -180,7 +180,7 @@
         <dependency>
             <groupId>org.reflections</groupId>
             <artifactId>reflections</artifactId>
-            <version>0.9.8</version>
+            <version>0.10.2</version>
             <scope>compile</scope>
             <optional>true</optional>
         </dependency>
