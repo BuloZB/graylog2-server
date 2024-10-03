@@ -83,7 +83,7 @@
         <jackson.version>2.4.1</jackson.version>
         <jersey.version>2.5</jersey.version>
         <glassfish-hk2.version>2.2.0-b21</glassfish-hk2.version>
-        <apache-directory-version>1.0.0-M20</apache-directory-version>
+        <apache-directory-version>1.0.0</apache-directory-version>
         <surefire.version>2.13</surefire.version>
         <guice.version>3.0</guice.version>
         <drools.version>6.1.0.CR1</drools.version>
@@ -396,7 +396,7 @@
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
-                <version>2.4</version>
+                <version>2.14.0</version>
             </dependency>
             <dependency>
                 <groupId>commons-codec</groupId>
