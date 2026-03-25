@@ -14,23 +14,21 @@
  * along with this program. If not, see
  * <http://www.mongodb.com/licensing/server-side-public-license>.
  */
-import { useQuery } from '@tanstack/react-query';
 
-import { SystemNotifications } from '@graylog/server-api';
+import { useContext } from 'react';
 
-import { NOTIFICATIONS_QUERY_KEY } from 'components/notifications/constants';
+import SelectableMessageTableMessagesContext from './SelectableMessageTableMessagesContext';
 
-const POLL_INTERVAL = 3000;
+const useSelectableMessageTableMessages = () => {
+  const contextValue = useContext(SelectableMessageTableMessagesContext);
 
-const fetchNotifications = () => SystemNotifications.listNotifications({ requestShouldExtendSession: false });
-const useNotifications = ({ enabled = true }: { enabled?: boolean } = {}) => {
-  const { data, isLoading } = useQuery({
-    queryKey: NOTIFICATIONS_QUERY_KEY,
-    queryFn: fetchNotifications,
-    refetchInterval: POLL_INTERVAL,
-    enabled,
-  });
+  if (!contextValue) {
+    throw new Error(
+      'useSelectableMessageTableMessages needs to be used inside SelectableMessageTableMessagesContext.Provider',
+    );
+  }
 
-  return { data, isLoading };
+  return contextValue;
 };
-export default useNotifications;
+
+export default useSelectableMessageTableMessages;

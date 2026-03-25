@@ -14,23 +14,20 @@
  * along with this program. If not, see
  * <http://www.mongodb.com/licensing/server-side-public-license>.
  */
-import { useQuery } from '@tanstack/react-query';
+import React from 'react';
+import styled from 'styled-components';
 
-import { SystemNotifications } from '@graylog/server-api';
+import { BULK_SELECT_COLUMN_WIDTH } from 'components/common/EntityDataTable/Constants';
 
-import { NOTIFICATIONS_QUERY_KEY } from 'components/notifications/constants';
+const StyledCell = styled.td`
+  &&& {
+    width: ${BULK_SELECT_COLUMN_WIDTH}px;
+    min-width: auto;
+  }
+`;
 
-const POLL_INTERVAL = 3000;
+const BulkSelectCell = ({ children = null }: React.PropsWithChildren) => (
+  <StyledCell onClick={(event) => event.stopPropagation()}>{children}</StyledCell>
+);
 
-const fetchNotifications = () => SystemNotifications.listNotifications({ requestShouldExtendSession: false });
-const useNotifications = ({ enabled = true }: { enabled?: boolean } = {}) => {
-  const { data, isLoading } = useQuery({
-    queryKey: NOTIFICATIONS_QUERY_KEY,
-    queryFn: fetchNotifications,
-    refetchInterval: POLL_INTERVAL,
-    enabled,
-  });
-
-  return { data, isLoading };
-};
-export default useNotifications;
+export default BulkSelectCell;
