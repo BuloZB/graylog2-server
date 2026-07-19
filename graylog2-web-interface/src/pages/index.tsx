@@ -29,6 +29,7 @@ const ClusterConfigurationPage = loadAsync(() => import('./ClusterConfigurationP
 const ConfigurationsPage = loadAsync(() => import('./ConfigurationsPage'));
 const ContentPacksPage = loadAsync(() => import('./ContentPacksPage'));
 const CreateEventDefinitionPage = loadAsync(() => import('./CreateEventDefinitionPage'));
+const SigmaEventDefinitionPage = loadAsync(() => import('./SigmaEventDefinitionPage'));
 const CreateEventNotificationPage = loadAsync(() => import('./CreateEventNotificationPage'));
 const CreateContentPackPage = loadAsync(() => import('pages/CreateContentPackPage'));
 const CreateExtractorsPage = loadAsync(() => import('./CreateExtractorsPage'));
@@ -106,6 +107,7 @@ const CollectorsOverviewPage = loadAsync(() => import('pages/CollectorsOverviewP
 const CollectorsFleetsPage = loadAsync(() => import('pages/CollectorsFleetsPage'));
 const CollectorsFleetDetailPage = loadAsync(() => import('pages/CollectorsFleetDetailPage'));
 const CollectorsInstancesPage = loadAsync(() => import('pages/CollectorsInstancesPage'));
+const CollectorsOnboardingInstancePage = loadAsync(() => import('pages/CollectorsOnboardingInstancePage'));
 const CollectorsDeploymentPage = loadAsync(() => import('pages/CollectorsDeploymentPage'));
 const CollectorsSettingsPage = loadAsync(() => import('pages/CollectorsSettingsPage'));
 const SimulatorPage = loadAsync(() => import('./SimulatorPage'));
@@ -141,6 +143,7 @@ export {
   ConfigurationsPage,
   ContentPacksPage,
   CreateEventDefinitionPage,
+  SigmaEventDefinitionPage,
   CreateEventNotificationPage,
   CreateContentPackPage,
   CreateExtractorsPage,
@@ -219,6 +222,7 @@ export {
   CollectorsFleetsPage,
   CollectorsFleetDetailPage,
   CollectorsInstancesPage,
+  CollectorsOnboardingInstancePage,
   CollectorsDeploymentPage,
   CollectorsSettingsPage,
   SimulatorPage,
