@@ -23,7 +23,11 @@ import type { IncompatibleIndex } from 'components/indices/hooks/useIncompatible
 
 import type { BulkIndexActionCandidate } from './bulkIndexActions';
 import type { PendingIndexStatus } from './hooks/usePendingIncompatibleIndexActions';
-import { CORE_ACTION_DEFINITIONS, getAvailableActions, useIncompatibleIndexActionDefinitions } from './incompatibleIndexActions';
+import {
+  CORE_ACTION_DEFINITIONS,
+  getAvailableActions,
+  useIncompatibleIndexActionDefinitions,
+} from './incompatibleIndexActions';
 import type { ConfirmedAction } from './incompatibleIndexActions';
 import type { IndicesGroup } from './incompatibleIndexGroups';
 
@@ -126,7 +130,13 @@ const IncompatibleIndexActions = ({
     return pendingStatus.percent > 0 ? (
       <ArchiveProgressBar
         bars={[
-          { value: pendingStatus.percent, label: `${pendingStatus.percent}%`, bsStyle: 'warning', animated: true, striped: true },
+          {
+            value: pendingStatus.percent,
+            label: `${pendingStatus.percent}%`,
+            bsStyle: 'warning',
+            animated: true,
+            striped: true,
+          },
         ]}
       />
     ) : (
