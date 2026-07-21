@@ -443,9 +443,9 @@ describe('IncompatibleIndicesTable', () => {
   });
 
   it('runs bulk delete for eligible group indices and reports partial failures', async () => {
-    const refetch = jest.fn(() =>
-      Promise.resolve({ data: [secondGraylogIndex] }),
-    ) as unknown as ReturnType<typeof useIncompatibleIndices>['refetch'];
+    const refetch = jest.fn(() => Promise.resolve({ data: [secondGraylogIndex] })) as unknown as ReturnType<
+      typeof useIncompatibleIndices
+    >['refetch'];
     asMock(IndexerIndices.remove).mockImplementation((indexName: string) =>
       indexName === 'graylog_1' ? Promise.reject(new Error('Delete failed')) : Promise.resolve(),
     );

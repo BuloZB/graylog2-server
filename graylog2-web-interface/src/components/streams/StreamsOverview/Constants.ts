@@ -70,13 +70,7 @@ const getStreamTableElements = (
     METRIC_COLUMN_IDS.maxProcessingTime,
   ];
 
-  const defaultColumnOrder = [
-    ...defaultCols,
-    ...routingCols,
-    ...performanceCols,
-    ...ungroupedExtNames,
-    'created_at',
-  ];
+  const defaultColumnOrder = [...defaultCols, ...routingCols, ...performanceCols, ...ungroupedExtNames, 'created_at'];
 
   const defaultVariantLayout = {
     ...SHARED_LAYOUT,
