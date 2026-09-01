@@ -81,8 +81,7 @@ const CreateNewWidgetModal = ({ onCancel, position }: Props) => {
     () =>
       creators.map(({ title, func, icon: WidgetIcon }) => {
         const onClick = async () => {
-          sendTelemetry(TELEMETRY_EVENT_TYPE.SEARCH_WIDGET_CREATE[upperCase(title).replace(/ /g, '_')], {
-          });
+          sendTelemetry(TELEMETRY_EVENT_TYPE.SEARCH_WIDGET_CREATE[upperCase(title).replace(/ /g, '_')], {});
 
           const newId = generateId();
           const newWidget = func({ view }).toBuilder().id(newId).build();
